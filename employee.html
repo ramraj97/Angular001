@@ -1,0 +1,81 @@
+<form name="exampleform" #form="ngForm"  >
+   
+<div class="col-md-6">
+
+  <h3></h3>
+
+<div>
+<label for="fn" >First Name</label>
+<input type="text" class="form-control" name="firstname" id="fn" [(ngModel)]='employee.FirstName'>
+</div>
+   
+<div>
+<label for="ln">Last Name</label>
+<input type="text" class="form-control" name="lastname" id="ln" [(ngModel)]='employee.LastName'>
+</div>
+
+<div>
+<label for="em">Email</label>
+<input type="email" class="form-control" name="email" id="em" [(ngModel)]='employee.Email'>
+</div>  
+
+<div>
+<label for="cn">Contect Number</label>
+<input type="text" class="form-control" name="Contect" id="cn" [(ngModel)]='employee.Contact'>
+</div>
+
+<div>   
+<label id="ad">Address</label>
+<textarea name="address" class="form-control" id="ad" [(ngModel)]='employee.Adress'></textarea>
+</div>
+
+<div>   
+<label for="un">Username</label>
+<input type="text" class="form-control" name="user" id="un" [(ngModel)]='employee.UserName'>
+</div>
+
+<div>    
+<label for="ps">Password</label>
+<input type="Password" class="form-control" name="Password" id="ps" [(ngModel)]='employee.Password'>
+</div>
+
+<div>   
+<label>Gender</label>
+<div>
+<input type="radio" name="gender"   value="male" [(ngModel)]='employee.Gender'>Male
+<input type="radio" name="gender"   value="female"    [(ngModel)]='employee.Gender'>Female
+</div>
+</div>
+  
+
+<div><label id="qu">Qualification</label>
+<select name= "Qualification" class="custom-select" id="qu" [(ngModel)]='employee.Qualification' >
+    <option *ngFor="let q of QualificationArray" [ngValue]= "q" >{{q}}</option>
+</select>
+</div>
+ 
+<div>
+<label id="ex">Experience</label>
+<select name="Experience" class="custom-select" id="ex" [(ngModel)]='employee.Experience'>
+    <option *ngFor='let a of ExperienceArray' [ngValue]= "a">{{a}}</option>
+</select>
+</div>
+
+<div>   
+<label id="cl">Coding Language</label>
+<div name="div" *ngFor="let l of LanguageArray" >
+<input type="checkbox"   name="check"   id="l" [(ngModel)]='employee.Language'  [value]="l.ngValue">{{l}}
+</div>
+</div>
+   
+<div>   
+<button type="submit" value="submit"  (click)="print()" class="btn btn-primary">Submit</button>
+</div>
+
+
+</div>
+</form>
+
+ 
+ 
+ 
